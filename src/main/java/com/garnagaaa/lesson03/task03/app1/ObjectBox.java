@@ -9,7 +9,15 @@ import java.util.List;
  */
 public class ObjectBox<T> {
 
-    protected List<T> base = new ArrayList<>();
+    private List<T> base = new ArrayList<>();
+
+    public List<T> getBase() {
+        return base;
+    }
+
+    public void setBase(List<T> base) {
+        this.base = base;
+    }
 
     /**
      * Метод добавляющий объект в коллекцию

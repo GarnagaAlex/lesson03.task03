@@ -25,7 +25,7 @@ public class MathBox extends ObjectBox<Number> {
      */
     public double summator() {
         double sum = 0;
-        for (Number num : super.base) {
+        for (Number num : getBase()) {
             sum += num.doubleValue();
         }
         return sum;
@@ -36,8 +36,8 @@ public class MathBox extends ObjectBox<Number> {
      * @param divider Делитель
      */
     public void splitter(Number divider) {
-        for (int i = 0; i < super.base.size(); i++) {
-            super.base.set(i, super.base.get(i).doubleValue() / divider.doubleValue());
+        for (int i = 0; i < getBase().size(); i++) {
+            getBase().set(i, getBase().get(i).doubleValue() / divider.doubleValue());
         }
     }
 
@@ -59,12 +59,12 @@ public class MathBox extends ObjectBox<Number> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MathBox mathBox = (MathBox) o;
-        return Objects.equals(super.base, mathBox.base);
+        return Objects.equals(getBase(), mathBox.getBase());
     }
 
     @Override
     public int hashCode() {
-        return super.base.hashCode();
+        return getBase().hashCode();
     }
 
 }
